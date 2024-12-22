@@ -30,10 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_generative_ai: ^0.3.2 # Hoặc phiên bản mới nhất
-  dash_chat_2: ^0.0.18 # Hoặc phiên bản mới nhất
-  flutter_dotenv: ^5.1.0 # Để quản lý API key (tuỳ chọn)
-
+  google_generative_ai: ^0.3.2 
+  dash_chat_2: ^0.0.18 
+  flutter_dotenv: ^5.1.0 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8

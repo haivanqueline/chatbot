@@ -31,13 +31,14 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: Colors.blue[800],
       ),
       body: Container(
+        padding: const EdgeInsets.all(8.0),
         child: DashChat(
           currentUser: _user,
           messages: _messages,
           onSend: (ChatMessage message) {
             _sendMessage(message.text);
             setState(() {
-              _messages.add(message);
+              _messages.insert(0, message);
             });
           },
           messageOptions: const MessageOptions(
@@ -69,16 +70,14 @@ class _ChatScreenState extends State<ChatScreen> {
     try {
       final botResponse = await _geminiService.sendMessage(message);
       setState(() {
-        _messages.insert(
-          0,
+        _messages.insert(0,
           ChatMessage(user: _bot, createdAt: DateTime.now(), text: botResponse),
         );
       });
     } catch (e) {
       print('Lỗi: $e');
       setState(() {
-        _messages.insert(
-          0,
+        _messages.insert(0,
           ChatMessage(
             user: _bot,
             createdAt: DateTime.now(),

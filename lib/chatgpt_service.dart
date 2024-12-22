@@ -5,7 +5,7 @@ class GeminiService {
   late GenerativeModel _model;
 
   GeminiService() {
-    final apiKey = dotenv.env['OPEN_API_KEY'] ?? ''; 
+    final apiKey = dotenv.env['OPEN_API_KEY'] ?? '';
     _model = GenerativeModel(model: 'gemini-pro', apiKey: apiKey);
   }
 
